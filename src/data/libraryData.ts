@@ -1,6 +1,6 @@
-import { BookOpen, Computer, Users, Mic, Pencil, Coffee } from 'lucide-react';
+import { BookOpen, Computer, Users, Mic, Pencil, Coffee, LucideIcon } from 'lucide-react';
 
-export const navLinks = [
+export const navLinks: { href: string; label: string }[] = [
   { href: '/', label: 'Home' },
   { href: '/about', label: 'About Us' },
   { href: '/services', label: 'Services' },
@@ -9,7 +9,7 @@ export const navLinks = [
   { href: '/contact', label: 'Contact' },
 ];
 
-export const services = [
+export const services: { icon: LucideIcon; title: string; description: string }[] = [
   {
     icon: BookOpen,
     title: 'Book Lending',
@@ -42,7 +42,7 @@ export const services = [
   },
 ];
 
-export const galleryImages = [
+export const galleryImages: { id: number; src: string; alt: string }[] = [
   { id: 1, src: 'https://images.unsplash.com/photo-1521587760476-6c12a4b040da?q=80&w=2070&auto=format&fit=crop', alt: 'Cozy library reading nook' },
   { id: 2, src: 'https://images.unsplash.com/photo-1507842217343-583bb7270b66?q=80&w=2100&auto=format&fit=crop', alt: 'Expansive library shelves' },
   { id: 3, src: 'https://images.unsplash.com/photo-1531988042231-d39a9cc12a9a?q=80&w=2070&auto=format&fit=crop', alt: 'Children\'s section of the library' },
@@ -51,7 +51,7 @@ export const galleryImages = [
   { id: 6, src: 'https://images.unsplash.com/photo-1543464273-a1a6d35aa843?q=80&w=2070&auto=format&fit=crop', alt: 'Student studying in the library' },
 ];
 
-export const testimonials = [
+export const testimonials: { quote: string; author: string; role: string }[] = [
   {
     quote: 'Stanwell Library is the heart of our community. The staff are always so helpful, and it’s my favourite place to find a quiet corner and a good book.',
     author: 'Sarah L.',
@@ -74,7 +74,11 @@ export const testimonials = [
   },
 ];
 
-export const openingHours = {
+type OpeningHours = {
+  [key: string]: { open: string | null; close: string | null };
+};
+
+export const openingHours: OpeningHours = {
   Monday: { open: '9:00 AM', close: '6:00 PM' },
   Tuesday: { open: '9:00 AM', close: '8:00 PM' },
   Wednesday: { open: '9:00 AM', close: '6:00 PM' },
